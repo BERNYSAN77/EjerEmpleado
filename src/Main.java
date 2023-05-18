@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Empleado e1 = null;
-        int opc;
+        Empleado empleados[] = new Empleado[10];
+        String nombre, apellido;
+        int dia, mes, anio,genero;
+        int opc, indice=0;
         double salario;
         Scanner sc = new Scanner(System.in);
 
@@ -17,7 +20,36 @@ public class Main {
             opc = Integer.parseInt(sc.next());
             switch (opc){
                 case 1:{
-                    e1 = new Empleado();
+                    System.out.println("Ingreso del empleado "+indice+1);
+                    System.out.print("Ingrese el nombre: ");
+                    nombre = sc.next();
+                    System.out.print("Ingrese el apellido: ");
+                    apellido = sc.next();
+                    System.out.print("Ingrese el genero 1 Masculio, 2 Femenino: ");
+                    genero = Integer.parseInt(sc.next());
+
+                    System.out.print("Ingrese el dia de nacimiento: ");
+                    dia = Integer.parseInt(sc.next());
+                    System.out.print("Ingrese el mes de nacimiento: ");
+                    mes = Integer.parseInt(sc.next());
+                    System.out.print("Ingrese el anio de nacimiento: ");
+                    anio = Integer.parseInt(sc.next());
+                    Fecha fn = new Fecha(dia,mes,anio);
+
+                    System.out.print("Ingrese el dia de ingreso: ");
+                    dia = Integer.parseInt(sc.next());
+                    System.out.print("Ingrese el mes de ingreso: ");
+                    mes = Integer.parseInt(sc.next());
+                    System.out.print("Ingrese el anio de ingreso: ");
+                    anio = Integer.parseInt(sc.next());
+                    Fecha fi = new Fecha(dia,mes,anio);
+
+                    System.out.print("Ingrese el salario: ");
+                    salario = Double.parseDouble(sc.next());
+
+                    empleados[indice] = new Empleado(nombre,apellido,genero,fn,fi,salario);
+
+
                 }break;
                 case 2:{
                     System.out.print("Ingrese el salario: ");
