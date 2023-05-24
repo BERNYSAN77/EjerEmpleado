@@ -160,6 +160,15 @@ public class Empleado
         salario = pSalario;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", genero=" + genero +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", fechaIngreso=" + fechaIngreso +
+                ", salario=" + salario +
+                '}';
+    }
 }
